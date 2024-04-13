@@ -31,7 +31,6 @@ interface ForecastData {
 
 const WeatherPage = () => {
   const router = useRouter();
-  console.log(router);
   const { lat, lon } = router.query;
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   const [forecastData, setForecastData] = useState<ForecastData | null>(null);
