@@ -16,25 +16,38 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+# Assignment submission
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+I have used nextJs for the assignment.
+I have used the following libraries for the assignment:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+1. For store I have used react-redux - For persisting data across multiple tabs I used redux-persist which uses local storage internally
+2. For infinite scroll I have used react-infinite-scroller
+3. For autocomplete I have used react-select-async-paginate
+4. I have tried using tailwindcss utility classes for styling
+5. All the pages are responsive in nature - using flex and grid
+6. Added dynamic backgrounds based on few of the current weather conditions
+7. Added simple history list of viewed locations
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+# Pages
 
-## Learn More
+1. Cities list page
 
-To learn more about Next.js, take a look at the following resources:
+   - displayed cities list in table
+   - Added functionality to sort
+   - Added autocomplete search for city name
+   - On city name click I am navigating to weather detail page for that city ( Opening a new page as mentioned in requirement )
+   - Added link to go to favorites page
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Weather details page
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+   - Added section to display current weather details
+   - Added UI to display list of weather predictions
+   - Added Option to change the unit
+   - Added Option add / remove favorite
 
-## Deploy on Vercel
+3. favorites page
+   - List all the favorites cities
+   - Provide option to remove favorite
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This application is deployed using Heroku - I already had an account created
