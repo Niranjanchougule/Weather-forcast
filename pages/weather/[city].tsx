@@ -104,6 +104,23 @@ const WeatherPage = () => {
     setUnit(selectedUnit);
   };
 
+  const getBackground = (weatherCondition: string) => {
+    switch (weatherCondition) {
+      case "Clear":
+        return "bg-gradient-to-b from-blue-400 to-blue-600"; // gradient from light blue to dark blue for clear weather
+      case "Clouds":
+        return "bg-gradient-to-b from-gray-300 to-gray-500"; // gradient from light gray to dark gray for cloudy weather
+      case "Rain":
+        return "bg-gradient-to-b from-gray-700 to-gray-900"; //  gradient from dark gray to black for rainy weather
+      case "Snow":
+        return "bg-gradient-to-b from-white to-gray-200"; // gradient from white to light gray for snowy weather
+      case "Drizzle":
+        return "bg-gradient-to-b from-gray-400 to-gray-600"; // gradient from light gray to dark gray for drizzle weather
+      default:
+        return "bg-gray-200"; // Default background color for unknown weather conditions
+    }
+  };
+
   if (loading) {
     return (
       <main className={`min-h-screen`}>
@@ -117,7 +134,9 @@ const WeatherPage = () => {
   }
 
   return (
-    <main className={`min-h-screen`}>
+    <main
+      className={`min-h-screen ${getBackground(weatherData.weather[0].main)}`}
+    >
       <div className="max-w-4xl mx-auto">
         <div className="bg-white shadow-md rounded-md p-6 mb-6">
           <div className="flex justify-between">

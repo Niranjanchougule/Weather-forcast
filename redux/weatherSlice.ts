@@ -15,6 +15,7 @@ export interface WeatherData {
   weather: {
     description: string;
     icon: string;
+    main: string;
   }[];
   wind: {
     speed: number;
