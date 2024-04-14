@@ -25,7 +25,7 @@ const FavoritesPage = () => {
     return <div>Loading...</div>;
   }
   return (
-    <main className={`min-h-screen`}>
+    <main className={`min-h-screen container mx-auto`}>
       <div className="max-w-4xl mx-auto">
         <h1 className="text-2xl font-semibold mb-4">Favorites</h1>
         {storeState.length === 0 ? (

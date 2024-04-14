@@ -3,6 +3,7 @@
 import {
   WeatherData,
   addFavorite,
+  addToHistory,
   removeFavorite,
   selectFavorites,
 } from "@/redux/weatherSlice";
@@ -67,6 +68,15 @@ const WeatherPage = () => {
       setIsFavorite(false);
     }
   };
+
+  useEffect(() => {
+    dispatch(
+      addToHistory({
+        url: window.location.href,
+        date: new Date().toString(),
+      })
+    );
+  }, []);
 
   useEffect(() => {
     const fetchWeatherData = async () => {

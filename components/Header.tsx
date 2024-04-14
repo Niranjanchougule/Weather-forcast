@@ -8,6 +8,12 @@ const Header = () => {
         <nav>
           <Link
             className="text-white hover:text-gray-300 ml-4"
+            href="/histories"
+          >
+            History
+          </Link>
+          <Link
+            className="text-white hover:text-gray-300 ml-4"
             href="/favorites"
           >
             Favorites

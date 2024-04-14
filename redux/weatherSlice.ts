@@ -26,12 +26,19 @@ export interface WeatherData {
   };
 }
 
+export interface HistoryData {
+  url: string;
+  date: string;
+}
+
 interface WeatherState {
   favorites: WeatherData[];
+  historyList: HistoryData[];
 }
 
 const initialState: WeatherState = {
   favorites: [],
+  historyList: [],
 };
 
 const weatherSlice = createSlice({
@@ -44,11 +51,17 @@ const weatherSlice = createSlice({
     removeFavorite: (state, action: PayloadAction<number>) => {
       state.favorites.splice(action.payload, 1);
     },
+    addToHistory: (state, action: PayloadAction<HistoryData>) => {
+      state.historyList.push(action.payload);
+    },
   },
 });
 
-export const { addFavorite, removeFavorite } = weatherSlice.actions;
+export const { addFavorite, removeFavorite, addToHistory } =
+  weatherSlice.actions;
 
 export const selectFavorites = (state: RootState) => state.weather.favorites;
+
+export const selectHistories = (state: RootState) => state.weather.historyList;
 
 export default weatherSlice.reducer;
